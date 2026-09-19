@@ -43,39 +43,39 @@ const seed = async () => {
 
     const [owner, admin, manager, member, viewer] = await User.create([
       {
-        name: "Fixl Owner",
-        email: "owner@fixl.demo",
+        name: "WorkNest Owner",
+        email: "owner@gmail.demo",
         passwordHash,
         role: "OWNER",
       },
       {
-        name: "Fixl Admin",
-        email: "admin@fixl.demo",
+        name: "WorkNest Admin",
+        email: "admin@gmail.demo",
         passwordHash,
         role: "ADMIN",
       },
       {
-        name: "Fixl Manager",
-        email: "manager@fixl.demo",
+        name: "WorkNest Manager",
+        email: "manager@gmail.demo",
         passwordHash,
         role: "MANAGER",
       },
       {
-        name: "Fixl Member",
-        email: "member@fixl.demo",
+        name: "WorkNest Member",
+        email: "member@gmail.demo",
         passwordHash,
         role: "MEMBER",
       },
       {
-        name: "Fixl Viewer",
-        email: "viewer@fixl.demo",
+        name: "WorkNest Viewer",
+        email: "viewer@gmail.demo",
         passwordHash,
         role: "VIEWER",
       },
     ]);
 
     const workspace = await Workspace.create({
-      name: "Fixl Demo Workspace",
+      name: "WorkNest Demo Workspace",
       owner: owner._id,
       members: [
         { user: owner._id, role: "OWNER" },
@@ -89,18 +89,13 @@ const seed = async () => {
     const project = await Project.create({
       workspace: workspace._id,
       owner: owner._id,
-      name: "Fixl Product Development",
-      description: "Demo project for the collaborative task management platform.",
+      name: "WorkNest Product Development",
+      description:
+        "Demo project for the collaborative task management platform.",
       startDate: daysFromNow(-14),
       endDate: daysFromNow(45),
       status: "IN_PROGRESS",
-      members: [
-        owner._id,
-        admin._id,
-        manager._id,
-        member._id,
-        viewer._id,
-      ],
+      members: [owner._id, admin._id, manager._id, member._id, viewer._id],
     });
 
     const [completedTask, activeTask, reviewTask, blockedTask, upcomingTask] =
@@ -260,14 +255,14 @@ const seed = async () => {
     });
 
     console.log("");
-    console.log("Fixl demo seed completed.");
+    console.log("WorkNest demo seed completed.");
     console.log("");
     console.log("Demo password: Demo@123");
-    console.log("owner@fixl.demo");
-    console.log("admin@fixl.demo");
-    console.log("manager@fixl.demo");
-    console.log("member@fixl.demo");
-    console.log("viewer@fixl.demo");
+    console.log("owner@gmail.com");
+    console.log("admin@gmail.com");
+    console.log("manager@gmail.com");
+    console.log("member@gmail.com");
+    console.log("viewer@gmail.com");
     console.log("");
   } catch (error) {
     console.error("Seed failed:", error);

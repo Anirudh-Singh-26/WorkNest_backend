@@ -1,6 +1,6 @@
-# Fixl Backend
+# WorkNest Backend
 
-Node.js + Express + TypeScript backend for the Fixl collaborative project and task management platform.
+Node.js + Express + TypeScript backend for the WorkNest collaborative project and task management platform.
 
 ## Stack
 

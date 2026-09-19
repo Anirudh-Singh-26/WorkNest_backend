@@ -57,7 +57,7 @@ afterAll(async () => {
   await mongoServer.stop();
 });
 
-describe("Fixl API integration", () => {
+describe("WorkNest API integration", () => {
   it("exposes a health endpoint", async () => {
     const response = await request(app).get("/api/health");
 

@@ -6,7 +6,7 @@ Run from `backend/`:
 npm run seed
 ```
 
-The seed resets the current database collections used by Fixl and creates demo data.
+The seed resets the current database collections used by WorkNest and creates demo data.
 
 Demo password:
 
@@ -17,11 +17,11 @@ Demo@123
 Users:
 
 ```text
-owner@fixl.demo
-admin@fixl.demo
-manager@fixl.demo
-member@fixl.demo
-viewer@fixl.demo
+owner@gmail.demo
+admin@gmail.demo
+manager@gmail.demo
+member@gmail.demo
+viewer@gmail.demo
 ```
 
 The seed includes workspace membership, project membership, tasks with different statuses/priorities, dependencies, comments, notifications, saved filters, activity logs and attachment metadata.
