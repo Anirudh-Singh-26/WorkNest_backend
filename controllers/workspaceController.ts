@@ -342,11 +342,11 @@ export const removeMember = async (
     await Project.updateMany(
       {
         workspace: workspace._id,
-        members: userId,
+        members: userId.toString(),
       },
       {
         $pull: {
-          members: userId,
+          members: userId.toString(),
         },
       },
     );
@@ -356,7 +356,7 @@ export const removeMember = async (
       await Task.updateMany(
         {
           project: { $in: projectIds },
-          assignee: userId,
+          assignee: userId.toString(),
         },
         {
           $unset: {
