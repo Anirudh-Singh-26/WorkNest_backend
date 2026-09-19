@@ -39,6 +39,12 @@ export const getProjectAccess = async (
     (member) => member.toString() === userId,
   );
 
+  const privilegedRoles = ["OWNER", "ADMIN", "MANAGER"];
+
+  if (!privilegedRoles.includes(workspaceMember.role) && !isProjectMember) {
+    return null;
+  }
+
   return {
     project,
     workspace,

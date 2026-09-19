@@ -19,12 +19,20 @@
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^26.6.1",
+    "mongodb-memory-server": "^10.2.3",
+    "supertest": "^7.1.4",
+    "@types/supertest": "^6.0.3",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4",
+    "tsx": "^4.20.5"
   },
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only ./server.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "seed": "tsx ./seed.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
   }
 }
