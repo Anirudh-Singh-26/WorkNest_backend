@@ -331,14 +331,12 @@ export const removeMember = async (
       });
     }
 
-    // Find all projects in this workspace
     const projects = await Project.find({
       workspace: workspace._id,
     }).select("_id");
 
     const projectIds = projects.map((project) => project._id);
 
-    // Remove user from all project members
     await Project.updateMany(
       {
         workspace: workspace._id,
@@ -351,7 +349,6 @@ export const removeMember = async (
       },
     );
 
-    // Remove user as assignee from all tasks in this workspace
     if (projectIds.length > 0) {
       await Task.updateMany(
         {
@@ -366,14 +363,12 @@ export const removeMember = async (
       );
     }
 
-    // Remove user from workspace
     workspace.members = workspace.members.filter(
       (member) => member.user.toString() !== userId,
     );
 
     await workspace.save();
 
-    // Notify connected clients
     const io = req.app.get("io");
 
     if (io) {
